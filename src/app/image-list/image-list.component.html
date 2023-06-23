@@ -1,0 +1,22 @@
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+<div class="logo">
+  <img src="../../assets/logo.png" alt="logo">
+</div>
+
+<form [formGroup]="myForm" class="form" novalidate>
+  <div class="searchInputDiv">
+    <input id="myInput" type='text' (input)="handle($event)" class="form-input" formControlName="searchText"
+           placeholder="Enter query" autocomplete="off"/>
+
+
+    <input type="submit" value="Search" class="material-symbols-outlined" (click)="submit()" [disabled]="inp">
+    <input type="submit" value="clear" class="material-symbols-outlined" (click)="clear()" [disabled]="inp">
+
+  </div>
+
+</form>
+
+<div class='figure'>
+  <img [src]="item.webformatURL" alt="image" class='box1' *ngFor="let item of imagesItem | async">
+</div>
